@@ -1,0 +1,171 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+/* Apply a simple font and center the text */
+body,
+button,
+input {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+/* Style the container */
+#container {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style the title */
+.general {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Style the weather input area */
+#weather {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Style the input field */
+#city-input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: calc(100% - 22px);
+    margin-bottom: 10px;
+}
+
+/* Style the button */
+#get-weather-btn {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+/* Style the buttons container */
+#weather button {
+    display: inline-block;
+    /* Align buttons side by side */
+    margin: 0 5px;
+    /* Add some space between buttons */
+}
+
+/* Style the clear button similarly to the get weather button */
+#clear-weather-btn {
+    background-color: #f44336;
+    /* Red color for clear action */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 7px;
+}
+
+/* Change clear button color on hover */
+#clear-weather-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Dark mode styles for the clear button */
+.dark-mode #clear-weather-btn {
+    background-color: #ba000d;
+}
+
+.dark-mode #clear-weather-btn:hover {
+    background-color: #f44336;
+}
+
+/* Change button color on hover */
+#get-weather-btn:hover {
+    background-color: #005f73;
+}
+
+/* Style the result area */
+#weather-result {
+    margin-top: 20px;
+}
+
+
+#toggle-dark-mode {
+    background-color: #008CBA;
+    border: none;
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 7px;
+}
+
+/* DARK MODE */
+/* Dark mode styles */
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode #container {
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+}
+
+.dark-mode #weather {
+    background-color: #222;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .general {
+    color: white;
+}
+
+.dark-mode #toggle-dark-mode {
+    border: none;
+
+}
+
+.dark-mode #city-input {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+.dark-mode #get-weather-btn {
+    background-color: #005f73;
+}
+
+.dark-mode #get-weather-btn:hover {
+    background-color: #008CBA;
+}
+
+/* Add a slide-in transition for the weather result */
+#weather-result {
+    margin-top: 20px;
+    opacity: 0;
+    /* Initially hide the result */
+    transition: opacity 0.5s, transform 0.5s;
+    transform: translateY(-20px);
+    /* Slide up by 20px */
+}
+
+/* Show the result when it's visible */
+#weather-result.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
