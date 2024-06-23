@@ -3,7 +3,8 @@ $(document).ready(function() {
     function getWeather() {
         var city = $('#city-input').val();
         var apiKey = 'c20fc19dca58f1c938fa90b1c4b5be4d'; // Replace with your OpenWeatherMap API key
-        var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey;
+        var url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey;
+
 
         $.ajax({
             url: url,
