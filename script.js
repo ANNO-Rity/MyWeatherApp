@@ -10,17 +10,17 @@ $(document).ready(function() {
             url: url,
             type: 'GET',
             success: function(data) {
-                var weatherData = 'City: ' + data.name + '<br>' +
-                                  'Temperature: ' + Math.round(data.main.temp - 273.15) + '°C<br>' +
-                                  'Humidity: ' + data.main.humidity + '%<br>' +
-                                  'Description: ' + data.weather[0].description;
+            var weatherData = 'City: ' + data.name + '<br>' +
+                      'Temperature: ' + Math.round(data.main.temp - 273.15) + '°C<br>' +
+                      'Feels Like: ' + Math.round(data.main.feels_like - 273.15) + '°C<br>' +
+                      'Humidity: ' + data.main.humidity + '%<br>' +
+                      'Pressure: ' + data.main.pressure + ' hPa<br>' +
+                      'Wind Speed: ' + data.wind.speed + ' m/s<br>' +
+                      'Wind Direction: ' + data.wind.deg + '°<br>' +
+                      'Description: ' + data.weather[0].description;
                 $('#weather-result').html(weatherData);
                 $('#weather-result').addClass('visible'); // Add the visible class
             },
-            error: function() {
-                $('#weather-result').html('An error occurred.');
-                $('#weather-result').removeClass('visible'); // Remove the visible class
-            }
         });
     }
 
