@@ -14,8 +14,9 @@ $(document).ready(function() {
                       'Temperature: ' + Math.round(data.main.temp - 273.15) + '°C<br>' +
                       'Feels Like: ' + Math.round(data.main.feels_like - 273.15) + '°C<br>' +
                       'Humidity: ' + data.main.humidity + '%<br>' +
-                      'Pressure: ' + data.main.pressure + ' hPa<br>' +
-                      'Wind Speed: ' + data.wind.speed + ' m/s<br>' +
+                      'Pressure: ' + (data.main.pressure / 1000).toFixed(2) + ' bar<br>' +
+                      'Visibility: ' + (data.visibility / 1000).toFixed(2) + ' km<br>' +
+                      'Wind Speed: ' + (data.wind.speed * 3.6).toFixed(2) + ' km/h<br>' +
                       'Wind Direction: ' + data.wind.deg + '°<br>' +
                       'Description: ' + data.weather[0].description;
                 $('#weather-result').html(weatherData);
